@@ -26,6 +26,6 @@ def project(request):
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('projects/', projects,name="projects"),r
+    path('projects/', projects,name="projects"),
     path('project/', project,name="project"),
 ]
