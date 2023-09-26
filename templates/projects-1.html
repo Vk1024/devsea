@@ -1,1 +1,57 @@
+
+{% extends 'main.html' %}
+
+{% block content %}
+
 <h1>Projects Template</h1>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Frontend Template</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Website Title</h1>
+        <nav>
+            <ul class="main-menu">
+                <li><a href="#">Home</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Services</a>
+                    <ul class="submenu">
+                        <li><a href="#">Service 1</a></li>
+                        <li><a href="#">Service 2</a></li>
+                        <li><a href="#">Service 3</a></li>
+                    </ul>
+                </li>
+                <li><a href="#">Portfolio</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+
+    <main>
+        <section class="slider">
+            <div class="slide">
+                <img src="slide1.jpg" alt="Slide 1">
+            </div>
+            <div class="slide">
+                <img src="slide2.jpg" alt="Slide 2">
+            </div>
+            <div class="slide">
+                <img src="slide3.jpg" alt="Slide 3">
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2023 Your Company</p>
+    </footer>
+</body>
+</html>
+
+{% endblock content %}
