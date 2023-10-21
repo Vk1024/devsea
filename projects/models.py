@@ -37,7 +37,8 @@ class Check(models.Model):
 class Tag(models.Model):
     name = models.CharField(max_length=200)
     Date_created = models.DateField(auto_now_add=True)
-    #Date_created_Modified = models.DateField(auto_now_add=True)
+    #
+    # Date_created_Modified = models.DateField(auto_now_add=True)
     id = models.UUIDField(default=uuid.uuid4,unique=True,primary_key=True,editable=False)
     
     def __str__(self):
