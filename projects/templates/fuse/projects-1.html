@@ -16,6 +16,21 @@
 
 <h1>Projects Template</h1>
 
+<ul> #unoredred list
+    {% for Item in ItemList %} # For Loop and Accessing data from views List
+       #Ordered
+       <!-- <li>Title:{{Item.title}}  ---{{Item.Discribtion}}</li>#Ordered list -->
+    
+        <li>Title:<a href="{% url  'project' Item.id %}">{{Item.title}}</a>  ---{{Item.description}} </li>   
+        #Ordered list
+     
+    {%endfor%}
+</ul  >
+
+
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
