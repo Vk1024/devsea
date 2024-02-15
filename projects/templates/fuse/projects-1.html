@@ -4,29 +4,48 @@
 {% block content %}
 
 {{message}}  # Msg Discrbe 3 for view message 
-<P>Hello you are on the {{page}} page </P> # way to write dynamic content
 
-{% if number > 10 %} # Logic for varaible declared in projects/views
-<p> Number is greater than 10 </p>
-{% elif number == 10 %}
-<p> Number is exactly 10 </p>
-{% else %}
-<p> Number is less than 10 </p>
-{% endif %}
+<!-- {% load static %} -->
 
 <h1>Projects Template</h1>
 
-<ul> #unoredred list
+<table>
+    <tr>
+       
+        <th>Project</th>
+        <th>Positive Votes</th>
+        <th>Ratio</th>
+        <th>Date</th>
+        <th></th>
+        <th></th>
+
+    </tr>
+
+    {% for Item in ItemList %}
+    <tr>
+       
+        <td>{{Item.title}}</td>
+        <td>{{Item.Vote_Ratio}}%</td>
+        <td>{{Item.Total_vote}}</td>
+        <td>{{Item.Date_created}}</td>
+        <td><a href="{% url  'update-project' Item.id %}">Edit</a></td>
+        <td><a href="{% url  'project' Item.id %}">View</a></td>
+    </tr>
+
+    {%endfor%}
+</table>
+<!-- 
+<!-- <ul> #unoredred list
     {% for Item in ItemList %} # For Loop and Accessing data from views List
        #Ordered
-       <!-- <li>Title:{{Item.title}}  ---{{Item.Discribtion}}</li>#Ordered list -->
+       <li>Title:{{Item.title}}  ---{{Item.Discribtion}}</li>#Ordered list
     
-        <li>Title:<a href="{% url  'project' Item.id %}">{{Item.title}}</a>  ---{{Item.description}} </li>   
+        <li>Title:<a href="{% url  'project' Item.id %}">{{Item.title}}</a>  ---{{Item.Date_created}} </li>   
         #Ordered list
      
     {%endfor%}
-</ul  >
-
+</ul  > -->
+ 
 
 
 
@@ -39,45 +58,7 @@
     <title>Frontend Template</title>
     <link rel="stylesheet" href="styles.css">
 </head>
-<body>
-    <header>
-        <h1>Website Title</h1>
-        <nav>
-            <ul class="main-menu">
-                <li><a href="#">Home</a></li>
-                <li><a href="#">About</a></li>
-                <li><a href="#">Services</a>
-                    <ul class="submenu">
-                        <li><a href="#">Service 1</a></li>
-                        <li><a href="#">Service 2</a></li>
-                        <li><a href="#">Service 3</a></li>
-                    </ul>
-                </li>
-                <li><a href="#">Portfolio</a></li>
-                <li><a href="#">Contact</a></li>
-            </ul>
-        </nav>
-    </header>
 
-
-    <main>
-        <section class="slider">
-            <div class="slide">
-                <img src="slide1.jpg" alt="Slide 1">
-            </div>
-            <div class="slide">
-                <img src="slide2.jpg" alt="Slide 2">
-            </div>
-            <div class="slide">
-                <img src="slide3.jpg" alt="Slide 3">
-            </div>
-        </section>
-    </main>
-
-    <footer>
-        <p>&copy; 2023 Your Company</p>
-    </footer>
-</body>
 </html>
 
 {% endblock content %}

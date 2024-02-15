@@ -1,6 +1,11 @@
 {%extends 'main.html' %}
 {% block content %}
 <h1>{{items1.title}}</h1>
+<hr>
+{% for tag in items1.tags.all %}
+<span style="border: 3px solid green">{{tag}}</span>
+{% endfor %}
+<hr>
 <br>
 <p>{{items1.description}}</p><h1></h1>#use the link to access the page  #http://127.0.0.1:8000/project/3/
 {% endblock %}
